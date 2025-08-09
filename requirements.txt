@@ -1,0 +1,6 @@
+These are the necessary libraries that will be needed before running this file
+
+stremlit
+pandas
+scikit-learn
+numpy
