@@ -288,7 +288,7 @@ default_idx = value_options.index(default_val) if default_val in value_options e
 
 
 st.markdown(
-    f"<p style='font-size:19px; color:white; font-weight:500; margin-bottom:0px; margin-top:0px;'>{question}</p>",
+    f"<p style='font-size:19px; color:var(--text-color); font-weight:500; margin-bottom:0px; margin-top:0px;'>{question}</p>",
     unsafe_allow_html=True
 )
 
@@ -384,6 +384,7 @@ if submit_clicked and idx == len(features) - 1:
 
 
 # In[ ]:
+
 
 
 
