@@ -200,7 +200,7 @@ feature_image_map = {
     'WebsiteForwarding': 'images/websiteforwarding.png',
     'StatusBarCust': 'images/StatusBarCust.jpg',
     'DisableRightClick': 'images/DisableRightClick.png',
-    'UsingPopupWindow': 'images/popoutwindow.jpg',
+    'UsingPopupWindow': 'images/popup.png',
     'IframeRedirection': 'images/iframe.jpg',
     'AgeofDomain': 'images/DomainAge.jpg',
     'DNSRecording': 'images/DNSRecords.png',
@@ -384,6 +384,7 @@ if submit_clicked and idx == len(features) - 1:
 
 
 # In[ ]:
+
 
 
 
