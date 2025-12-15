@@ -216,11 +216,10 @@ if not st.session_state.submitted:
                 st.subheader(f"{10-(idx+1)} questions more to go!")
             
           st.markdown(
-    f'''
-    <img src="data:image/gif;base64,{data_url}" class="result-gif">
-    ''',
-    unsafe_allow_html=True
-)
+              f'''
+              <img src="data:image/gif;base64,{data_url}" class="result-gif">
+              ''',
+              unsafe_allow_html=True)
 
            
             st.progress(progress, text=f"{int(progress * 100)}% completed")
@@ -349,6 +348,7 @@ else:
 
 
 # In[ ]:
+
 
 
 
