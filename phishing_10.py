@@ -200,7 +200,7 @@ if not st.session_state.submitted:
             elif idx == 8:
                 st.subheader(f"1 more question to go!")
             elif idx == 9:
-                st.subheader(f"Last question to go!")
+                st.subheader(f"Last question!")
             else:
 
                 st.subheader(f"{10-(idx+1)} questions more to go!")
@@ -323,6 +323,7 @@ else:
 
 
 # In[ ]:
+
 
 
 
