@@ -6,22 +6,35 @@ import joblib
 import pandas as pd
 import time
 
+
+
+st.set_page_config(layout="wide")
 st.markdown(
     """
     <style>
-    .result-gif {
-        width: 320px;      /* ⬅️ increase this value */
+    /* Questionnaire GIF (Robot) */
+    .my-image {
+        width: 420px;        /* ⬅️ increase size here */
         height: auto;
         display: block;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 15px;
+    }
+
+    /* Result GIF (Hacker / Security) */
+    .my-image2 {
+        width: 480px;        /* ⬅️ larger for results */
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 15px;
     }
     </style>
     """,
     unsafe_allow_html=True
 )
-
-st.set_page_config(layout="wide")
 # --- Load model ---
 model = joblib.load("rf_phishing_model_10-updated.pkl")
 # --- Features and questions ---
@@ -214,11 +227,11 @@ if not st.session_state.submitted:
             else:
 
                 st.subheader(f"{10-(idx+1)} questions more to go!")
-                st.markdown(
-                    f'''
-                    <img src="data:image/gif;base64,{data_url}" class="result-gif">
-                    ''',
-                    unsafe_allow_html=True)
+            
+            st.markdown(
+                f'<img src="data:image/gif;base64,{data_url}" alt="cat gif" class="my-image">',
+                unsafe_allow_html=True,
+            )
 
            
             st.progress(progress, text=f"{int(progress * 100)}% completed")
@@ -244,20 +257,6 @@ if not st.session_state.submitted:
 else:
 
     import base64
-    st.markdown(
-    """
-    <style>
-    .result-gif {
-        width: 320px;      /* ⬅️ increase this value */
-        height: auto;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
     file_ = open("images/Hacker.gif", "rb")
     contents = file_.read()
     data_url = base64.b64encode(contents).decode("utf-8")
@@ -271,12 +270,12 @@ else:
     input_values = [st.session_state.answers.get(f, 0) for f in features]
     prediction = model.predict([input_values])[0]
 
-    st.markdown(
-        f'''
-        <img src="data:image/gif;base64,{data_url}" class="result-gif">
-        ''',
-        unsafe_allow_html=True
-    )
+    st.markdown("""
+           <div class="header-container">
+               <h1>AI Phishing Website Detection Questionnaire</h1>
+               
+           </div>
+           """, unsafe_allow_html=True)
    
     half1, half2, half3, half4 = st.columns([0.6, 1.3, 2, 0.7], gap="small", vertical_alignment="center")
 
@@ -347,10 +346,6 @@ else:
 
 
 # In[ ]:
-
-
-
-
 
 
 
