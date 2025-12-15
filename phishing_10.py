@@ -8,9 +8,10 @@ import time
 
 
 
+
 st.set_page_config(layout="wide")
 # --- Load model ---
-model = joblib.load("rf_phishing_model.pkl")
+model = joblib.load("rf_phishing_model_10.pkl")
 # --- Features and questions ---
 features = [
         
@@ -195,14 +196,14 @@ if not st.session_state.submitted:
         file_.close()
         with st.container(height=730, border=True):
             if idx == 0:
-                st.subheader(f"{30} questions more to go!")
-            elif idx == 28:
+                st.subheader(f"{10} questions more to go!")
+            elif idx == 8:
                 st.subheader(f"1 more question to go!")
-            elif idx == 29:
+            elif idx == 9:
                 st.subheader(f"Last question to go!")
             else:
 
-                st.subheader(f"{30-(idx+1)} questions more to go!")
+                st.subheader(f"{10-(idx+1)} questions more to go!")
             
             st.markdown(
                 f'<img src="data:image/gif;base64,{data_url}" alt="cat gif" class="my-image">',
@@ -322,6 +323,7 @@ else:
 
 
 # In[ ]:
+
 
 
 
