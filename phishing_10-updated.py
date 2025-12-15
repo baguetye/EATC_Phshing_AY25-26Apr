@@ -271,12 +271,12 @@ else:
     input_values = [st.session_state.answers.get(f, 0) for f in features]
     prediction = model.predict([input_values])[0]
 
-   st.markdown(
-    f'''
-    <img src="data:image/gif;base64,{data_url}" class="result-gif">
-    ''',
-    unsafe_allow_html=True
-)
+    st.markdown(
+        f'''
+        <img src="data:image/gif;base64,{data_url}" class="result-gif">
+        ''',
+        unsafe_allow_html=True
+    )
    
     half1, half2, half3, half4 = st.columns([0.6, 1.3, 2, 0.7], gap="small", vertical_alignment="center")
 
@@ -347,6 +347,7 @@ else:
 
 
 # In[ ]:
+
 
 
 
